@@ -1,9 +1,11 @@
 import torch
 from torchvision import models, transforms
 
+# Загрузка предобученной модели
 model = models.resnet50(pretrained=True)
 model.eval()
 
+# Преобразование изображения перед подачей на вход модели
 preprocess = transforms.Compose([
     transforms.Resize(256),
     transforms.CenterCrop(224),
@@ -11,6 +13,7 @@ preprocess = transforms.Compose([
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
 ])
 
+# Ф-я классификации изображения
 def classify_image(image):
     input_tensor = preprocess(image)
     input_batch = input_tensor.unsqueeze(0)

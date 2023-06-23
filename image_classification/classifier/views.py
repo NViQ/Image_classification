@@ -3,6 +3,7 @@ from django.views.decorators.csrf import csrf_exempt
 from PIL import Image
 from .utils import classify_image
 
+#Ф-я обработки запроса для загрузки файла изображения
 @csrf_exempt
 def upload_file(request):
     if request.method == 'POST':
