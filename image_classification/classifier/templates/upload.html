@@ -44,14 +44,27 @@
         .upload-btn:hover {
             background-color: #45a049;
         }
+
+        .error-message {
+            text-align: center;
+            color: red;
+            font-size: 14px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <h1>Image Classification</h1>
-    <form class="upload-form" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        <input type="file" name="file" accept="image/*">
-        <input class="upload-btn" type="submit" value="Upload">
-    </form>
+    <div class="upload-form">
+        {% if error_message %}
+            <p class="error-message">{{ error_message }}</p>
+        {% endif %}
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="file" accept="image/*">
+            <input class="upload-btn" type="submit" value="Upload">
+        </form>
+    </div>
 </body>
+
 </html>
