@@ -19,7 +19,7 @@
    pip install -r requirements.txt
 
 ### Использование
-1. Запуск сервера:
+1. Запуск сервера из корневого каталога:
    ```bash
    python manage.py runserver
 
