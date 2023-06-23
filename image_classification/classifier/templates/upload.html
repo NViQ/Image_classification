@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Classification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .upload-form {
+            width: 300px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .upload-form input[type="file"] {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        .upload-btn {
+            display: block;
+            width: 200px;
+            height: 40px;
+            margin: 0 auto;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: center;
+            line-height: 40px;
+            cursor: pointer;
+        }
+
+        .upload-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Classification</h1>
+    <form class="upload-form" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input type="file" name="file" accept="image/*">
+        <input class="upload-btn" type="submit" value="Upload">
+    </form>
+</body>
+</html>
