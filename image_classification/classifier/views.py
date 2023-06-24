@@ -15,10 +15,10 @@ def upload_file(request):
                 class_name = classify_image(img)
                 return render(request, 'result.html', {'width': width, 'height': height, 'class_name': class_name})
             else:
-                error_message = "no file selected"
+                error_message = "file not selected"
                 return render(request, 'upload.html', {'error_message': error_message})
         else:
-            error_message = "no file selected"
+            error_message = "file not selected"
             return render(request, 'upload.html', {'error_message': error_message})
     return render(request, 'upload.html')
 
