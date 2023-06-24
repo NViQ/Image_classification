@@ -24,4 +24,3 @@ def upload_file(request):
 
 def upload_another_image(request):
     return redirect('upload_file')
-
